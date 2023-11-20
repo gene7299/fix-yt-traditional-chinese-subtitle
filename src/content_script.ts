@@ -4,8 +4,11 @@ import * as OpenCC from "opencc-js";
  * Hide and add new menu items
  */
 setInterval(() => {
-  const menu = document.querySelector(".ytp-panel-menu")!;
-  const items = menu.querySelectorAll(".ytp-menuitem")!;
+  const menu = document.querySelector(".ytp-panel-menu");
+
+  if (!menu) return;
+
+  const items = menu.querySelectorAll(".ytp-menuitem");
   items.forEach((item) => {
     const span = item.querySelector(".ytp-menuitem-label")!;
 
@@ -58,7 +61,10 @@ setInterval(() => {
  * Change menu item text
  */
 setInterval(() => {
-  const menu = document.querySelector(".ytp-panel-menu")!;
+  const menu = document.querySelector(".ytp-panel-menu");
+
+  if (!menu) return;
+
   const items = menu.querySelectorAll(".ytp-menuitem")!;
   items.forEach((item) => {
     const span = item.querySelector(".ytp-menuitem-label")!;
