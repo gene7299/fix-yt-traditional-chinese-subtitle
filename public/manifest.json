@@ -6,12 +6,12 @@
   "icons": {
     "128": "128.png"
   },
+  "action": {
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
-      "matches": [
-        "https://www.youtube.com/watch*",
-        "https://youtube.com/watch*"
-      ],
+      "matches": ["https://www.youtube.com/*", "https://youtube.com/*"],
       "js": ["js/vendor.js", "js/content_script.js"]
     }
   ]
