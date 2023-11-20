@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension-typescript-starter",
+  "name": "fix-yt-traditional-chinese-subtitle",
   "version": "1.0.0",
-  "description": "chrome-extension-typescript-starter",
+  "description": "fix-yt-traditional-chinese-subtitle",
   "main": "index.js",
   "scripts": {
     "watch": "webpack --config webpack/webpack.dev.js --watch",
@@ -12,17 +12,15 @@
   },
   "author": "",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chibat/chrome-extension-typescript-starter.git"
-  },
   "dependencies": {
+    "opencc-js": "^1.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/chrome": "0.0.158",
     "@types/jest": "^29.5.0",
+    "@types/opencc-js": "^1.0.3",
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
     "copy-webpack-plugin": "^9.0.1",
