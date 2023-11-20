@@ -1,9 +1,13 @@
 import * as OpenCC from "opencc-js";
 
-/**
- * Hide and add new menu items
- */
 setInterval(() => {
+  hideAndAddMenuItems();
+  convertSubtitle();
+  changeReminderText();
+  changeMenuItemText();
+});
+
+const hideAndAddMenuItems = () => {
   const menu = document.querySelector(".ytp-panel-menu");
 
   if (!menu) return;
@@ -19,15 +23,12 @@ setInterval(() => {
       span.textContent = "[修復] 中文（繁體）";
     }
   });
-});
+};
 
 const converter = OpenCC.Converter({ from: "cn", to: "twp" });
 let lastSubtitle = new Array<string>();
 
-/**
- * Convert subtitle
- */
-setInterval(() => {
+const convertSubtitle = () => {
   const segments = document.querySelectorAll(".ytp-caption-segment");
 
   if (!segments) return;
@@ -43,24 +44,18 @@ setInterval(() => {
     segment.textContent = converted;
     lastSubtitle[index] = converted;
   });
-});
+};
 
-/**
- * Change reminder text
- */
-setInterval(() => {
+const changeReminderText = () => {
   const contents = document.querySelectorAll(".ytp-menuitem-content");
   if (!contents) return;
 
   contents.forEach((content) => {
     content.textContent = replaceReminder(content.textContent);
   });
-});
+};
 
-/**
- * Change menu item text
- */
-setInterval(() => {
+const changeMenuItemText = () => {
   const menu = document.querySelector(".ytp-panel-menu");
 
   if (!menu) return;
@@ -71,7 +66,7 @@ setInterval(() => {
 
     span.textContent = replaceReminder(span.textContent);
   });
-});
+};
 
 const reminder = ">> 中文（簡體）";
 
